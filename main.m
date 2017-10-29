@@ -1,30 +1,28 @@
+close all;
 
 % cite 
 path = 'C:\Users\lenovo\Desktop\cs484_hw1\binary_image_analysis\cs484_hw1_data\cs484_hw1_data';
+
+if ~isdir(path)
+  errorMessage = sprintf('Error: The following folder does not exist:\n%s', path);
+  uiwait(warndlg(errorMessage));
+  return;
+end
+%  
 % licencePlates = dir( strcat(path, '\license_plates\*.jpg' ));
 % for i = 1 : length(licencePlates)
 %     filename = strcat(path, '\license_plates\', licencePlates(i).name);
 %     img = imread(filename);
-%     out = licencePlateProcess(img);
-%     figure; colormap('summer'); imshow( out );
-%     
+%     licencePlateProcess(img, i);
 % end
+% pause;
 
-surveillance1 = strcat(path, '\pets2000');
-surveillance2 = strcat(path, '\pets2001');
+survFolder1 = strcat(path, '\pets2000\');
+survFolder2 = strcat(path, '\pets2001\');
+surveillance_process(survFolder1);
+pause;
+surveillance_process(survFolder2);
+pause;
 
-surv1 = dir( strcat(path, surveillance1, '\*.jpg' ));
-imgs1 = zeros(1,4);
-for i = 1 : length(surv1)
-    filename = strcat(path, surveillance1, surv1(i).name);
-    imgs1(i) = imread(filename); 
-end
-out = surveillance_process(imgs1);
-
-surv2 = dir( strcat(path, surveillance2, '\*.jpg' ));
-imgs2 = zeros(1,4);
-for i = 1 : length(surv2)
-    filename = strcat(path, surveillance2, surv2(i).name);
-    imgs2(i) = imread(filename);
-end
-out = surveillance_process(imgs2);
+clear all;
+clc;
