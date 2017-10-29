@@ -2,6 +2,7 @@
 % This function takes a binary image erodes it with the specified
 % structured element, then returns the result as the output
 
+% I implemented the first definition of erosion
 function output_image = erosion(input_image, structuring_element)
     [x_in,y_in] = size(input_image);
     [x_str,y_str] = size(structuring_element.Neighborhood);

@@ -2,6 +2,7 @@
 % This function takes a binary image dilates it with the specified
 % structured element, then returns the result as the output
 
+% I implemented the first definition of dilation
 function output_image = dilation(input_image, structuring_element)
     [x_in,y_in] = size(input_image);
     [x_str,y_str] = size(structuring_element.Neighborhood);
