@@ -40,7 +40,5 @@ function output_image = erosion(input_image, structuring_element)
             end
         end
     end
-    
-    figure, imshow(output_image);
 end
 
