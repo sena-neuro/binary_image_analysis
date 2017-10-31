@@ -1,6 +1,6 @@
 % licence plates
 
-function licence_plate_process(image, i)
+function licence_plate_process(image)
   % threshold
   red = image( :, :, 1 );    % first (red) band
   green = image( :, :, 2 );  % second (green) band
