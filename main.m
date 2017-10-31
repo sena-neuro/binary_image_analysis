@@ -14,7 +14,7 @@ licencePlates = dir( strcat(path, '\license_plates\*.jpg' ));
 for i = 1 : length(licencePlates)
     filename = strcat(path, '\license_plates\', licencePlates(i).name);
     img = imread(filename);
-    licence_plate_process(img, i);
+    licence_plate_process(img);
 end
 pause;
 
